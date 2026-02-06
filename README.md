@@ -125,6 +125,6 @@ Built for New Visions for Public Schools to support student success through data
 
 ---
 
-**Live Demo:** [View Dashboard](https://ashseconomist.github.io/student-risk-dashboard/)
+**Live Demo:** [View Dashboard](https://ashsconomist.github.io/student-risk-dashboard/)
 
 
