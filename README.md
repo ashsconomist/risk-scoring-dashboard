@@ -1,4 +1,7 @@
-# New Visions Early Warning Analytics Dashboard
+<img width="3354" height="1808" alt="image" src="https://github.com/user-attachments/assets/9fa6dcdf-56b9-4cf6-add3-0c9f4e8c9c97" />
+
+
+# Early Warning Analytics Dashboard
 
 A data-driven early warning system for identifying students at risk of dropping out, built with interactive visualizations and actionable insights.
 
@@ -121,7 +124,7 @@ This project is for educational purposes. Student data is synthetic/anonymized.
 
 ## 🙏 Acknowledgments
 
-Built for New Visions for Public Schools to support student success through data-driven intervention.
+Built for Public Schools to support student success through data-driven intervention.
 
 ---
 
