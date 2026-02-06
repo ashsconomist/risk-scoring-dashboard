@@ -7,7 +7,7 @@ A data-driven early warning system for identifying students at risk of dropping 
 
 ![Dashboard Preview](https://img.shields.io/badge/Students-1000-blue) ![Risk Levels](https://img.shields.io/badge/Risk%20Levels-4-orange) ![Status](https://img.shields.io/badge/Status-Active-green)
 
-## 🎯 Overview
+## Overview
 
 This dashboard helps educators identify and support struggling students before it's too late. It tracks **1,000 students** across 4 years (2021-2024) using three key metrics:
 
@@ -15,7 +15,7 @@ This dashboard helps educators identify and support struggling students before i
 - **Math Stability** — Year-over-year math grade trend  
 - **English Stability** — Year-over-year English grade trend
 
-## 🚨 Risk Levels
+## Risk Levels
 
 | Level | Name | Criteria | Action |
 |-------|------|----------|--------|
@@ -25,9 +25,9 @@ This dashboard helps educators identify and support struggling students before i
 | 🟣 **--** | Stable but Struggling | Est. levels <70% despite stable YoY | Recovery intervention needed |
 | 🟢 **0** | On Track | No risk factors | Continue monitoring |
 
-## ✨ Key Features
+## Key Features
 
-### 📊 Estimated Absolute Levels (NEW)
+### Estimated Absolute Levels
 The dashboard calculates **cumulative decline** to estimate where students actually are—not just whether they're improving or declining year-over-year.
 
 **Example:** A student might show Risk 0 (stable) but have:
@@ -48,10 +48,10 @@ Without this feature, they'd appear "fine" when they actually need urgent help.
 - Search individual student IDs
 - Toggle between table and chart views
 
-### 🎯 Action Recommendations
+### Action Recommendations
 Automatic intervention suggestions based on risk level and specific drivers.
 
-## 📋 Case Studies
+## Case Studies
 
 ### Student 1002 — "Stable but Struggling"
 | Year | Grade | Risk | Est. Attendance | Est. Math | Est. English |
@@ -73,7 +73,7 @@ Automatic intervention suggestions based on risk level and specific drivers.
 
 **Insight:** Had one bad year but recovered to acceptable levels. This is what genuine recovery looks like.
 
-## 🧮 Methodology
+## Methodology
 
 **Risk Assessment:**
 - Students flagged when any metric declines >5% year-over-year
@@ -99,14 +99,14 @@ student-risk-dashboard/
 └── README.md           # This file
 ```
 
-## 🛠️ Technical Details
+## Technical Details
 
 - **Pure HTML/CSS/JavaScript** — No build process required
 - **Chart.js 4.4.0** — For visualizations
 - **Self-contained** — All data embedded in the HTML file
 - **Responsive** — Works on desktop and tablet
 
-## 📊 Key Findings
+## Key Findings
 
 | Metric | Value |
 |--------|-------|
@@ -118,11 +118,11 @@ student-risk-dashboard/
 
 **Key Insight:** Students at Risk Level 3 drop out at **12x the rate** of Risk Level 0 students.
 
-## 📝 License
+## License
 
 This project is for educational purposes. Student data is synthetic/anonymized.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built for Public Schools to support student success through data-driven intervention.
 
