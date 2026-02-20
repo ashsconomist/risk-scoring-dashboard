@@ -5,7 +5,7 @@ import numpy as np
 np.random.seed(42)
 
 # Load the original data
-df = pd.read_excel('New_Visions_Profile_Simulation_1.xlsx', sheet_name=0)
+df = pd.read_excel('Risk_Scoring_Profile_Simulation_1.xlsx', sheet_name=0)
 
 # Clean the data
 df = df[[col for col in df.columns if not col.startswith('Unnamed')]]
@@ -145,6 +145,6 @@ graduation_rate = (grade_12_students / grade_9_students) * 100
 print(f"\n4-Year Graduation Rate: {graduation_rate:.1f}%")
 
 # Save the modified dataset
-output_file = 'New_Visions_Profile_With_Dropout.xlsx'
+output_file = 'Risk_Scoring_Profile_With_Dropout.xlsx'
 df_final.to_excel(output_file, index=False)
 print(f"\n✅ Modified dataset saved to: {output_file}")
