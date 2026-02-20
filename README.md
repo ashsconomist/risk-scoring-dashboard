@@ -1,133 +1,118 @@
-<img width="3354" height="1808" alt="image" src="https://github.com/user-attachments/assets/9fa6dcdf-56b9-4cf6-add3-0c9f4e8c9c97" />
+# Risk Scoring & Threshold Detection Dashboard
 
+An interactive analytics dashboard applying multi-metric threshold 
+detection to classify records into risk tiers and surface actionable 
+patterns for operational decision-making.
 
-# Early Warning Analytics Dashboard
-
-A data-driven early warning system for identifying students at risk of dropping out, built with interactive visualizations and actionable insights.
-
-![Dashboard Preview](https://img.shields.io/badge/Students-1000-blue) ![Risk Levels](https://img.shields.io/badge/Risk%20Levels-4-orange) ![Status](https://img.shields.io/badge/Status-Active-green)
+![Records](https://img.shields.io/badge/Records-1000-blue) 
+![Risk Levels](https://img.shields.io/badge/Risk%20Levels-4-orange) 
+![Status](https://img.shields.io/badge/Status-Active-green)
 
 ## Overview
 
-This dashboard helps educators identify and support struggling students before it's too late. It tracks **1,000 students** across 4 years (2021-2024) using three key metrics:
+This dashboard tracks 1,000 records across 4 time periods (2021–2024) 
+using three longitudinal performance metrics:
 
-- **Attendance Index** — Year-over-year attendance change
-- **Math Stability** — Year-over-year math grade trend  
-- **English Stability** — Year-over-year English grade trend
+- **Metric A** — Year-over-year change, dimension 1
+- **Metric B** — Year-over-year trend, dimension 2
+- **Metric C** — Year-over-year trend, dimension 3
 
-## Risk Levels
+The scoring engine flags records when any metric declines beyond a 
+configurable threshold and assigns a Risk Score of 0–3 based on how 
+many metrics are declining simultaneously.
 
-| Level | Name | Criteria | Action |
-|-------|------|----------|--------|
-| 🔴 **3** | Critical Risk | All 3 metrics declining >5% | Immediate multi-disciplinary review |
-| 🟠 **2** | Intervention Needed | 2 metrics declining >5% | Parent conference + academic support |
-| 🟡 **1** | Early Warning | 1 metric declining >5% | Targeted tutoring/check-ins |
-| 🟣 **--** | Stable but Struggling | Est. levels <70% despite stable YoY | Recovery intervention needed |
+## Risk Tiers
+
+| Score | Name | Criteria | Recommended Action |
+|-------|------|----------|--------------------|
+| 🔴 **3** | Critical | All 3 metrics declining >5% | Immediate multi-factor review |
+| 🟠 **2** | Intervention Needed | 2 metrics declining >5% | Targeted intervention |
+| 🟡 **1** | Early Warning | 1 metric declining >5% | Monitoring + check-in |
+| 🟣 **--** | Stable but Struggling | Estimated absolute levels <70% despite stable YoY | Recovery-level response |
 | 🟢 **0** | On Track | No risk factors | Continue monitoring |
 
 ## Key Features
 
 ### Estimated Absolute Levels
-The dashboard calculates **cumulative decline** to estimate where students actually are—not just whether they're improving or declining year-over-year.
+The dashboard calculates cumulative decline to estimate where records 
+actually stand — not just whether they are improving or declining 
+year-over-year.
 
-**Example:** A student might show Risk 0 (stable) but have:
-- 41% estimated attendance
-- 49% estimated math
-- 49% estimated English
+**Example:** A record may show Risk 0 (stable year-over-year) but have 
+estimated absolute levels of 41% / 49% / 49% across its three metrics. 
+Without this feature, it would appear healthy when it actually requires 
+urgent attention. This is the "Stable but Struggling" insight.
 
-Without this feature, they'd appear "fine" when they actually need urgent help.
-
-### 📈 Interactive Charts
+### Interactive Charts
 - Year-over-year trend analysis
 - Risk distribution by cohort
-- Attendance vs. Math scatter plot
-- Dropout conversion rates by risk level
+- Scatter plot: Metric A vs. Metric B
+- Attrition/conversion rates by risk tier
 
-### 🔍 Filtering & Search
-- Filter by year, grade, risk level
-- Search individual student IDs
+### Filtering & Search
+- Filter by time period, segment, and risk level
+- Search by individual record ID
 - Toggle between table and chart views
 
-### Action Recommendations
-Automatic intervention suggestions based on risk level and specific drivers.
-
-## Case Studies
-
-### Student 1002 — "Stable but Struggling"
-| Year | Grade | Risk | Est. Attendance | Est. Math | Est. English |
-|------|-------|------|-----------------|-----------|--------------|
-| 2021 | 9 | 0 | 90% | 75% | 75% |
-| 2022 | 10 | 3 | 69% | 61% | 61% |
-| 2023 | 11 | 3 | 40% | 49% | 49% |
-| 2024 | 12 | **0** | **41%** | **49%** | **49%** |
-
-**Insight:** Shows Risk 0 in senior year but has catastrophic estimated levels. The "Stable but Struggling" feature catches students like this.
-
-### Student 1007 — True Recovery
-| Year | Grade | Risk | Est. Attendance | Est. Math | Est. English |
-|------|-------|------|-----------------|-----------|--------------|
-| 2021 | 9 | 0 | 90% | 75% | 75% |
-| 2022 | 10 | 0 | 90% | 77% | 77% |
-| 2023 | 11 | 3 | 78% | 60% | 61% |
-| 2024 | 12 | 0 | 78% | 63% | 63% |
-
-**Insight:** Had one bad year but recovered to acceptable levels. This is what genuine recovery looks like.
+### Automated Recommendations
+Intervention logic triggered by risk score and specific metric drivers.
 
 ## Methodology
 
-**Risk Assessment:**
-- Students flagged when any metric declines >5% year-over-year
-- Risk level = count of declining metrics (0-3)
+**Risk Scoring:**
+- Records flagged when any metric declines >5% year-over-year
+- Risk score = count of declining metrics (0–3)
 
-**Estimated Levels:**
-- Baseline assumptions: 90% attendance, 75% math, 75% English (Grade 9)
-- Each year: Previous estimate + year-over-year change
-- "Struggling" threshold: <70% in any metric
+**Estimated Absolute Levels:**
+- Baseline set at initialization (Period 1)
+- Each subsequent period: prior estimate + observed change
+- "Struggling" threshold: estimated level <70% in any metric
 
-## 🚀 Quick Start
+**Background:** This threshold-based detection methodology is adapted 
+from longitudinal administrative data analysis work, demonstrating how 
+analytical frameworks from labor economics translate directly into 
+operational decision-support tools across industries.
 
-1. Download `index.html`
-2. Open in any modern browser
-3. Use filters to explore the data
-4. Click "Table View" for detailed student records
-
-## 📁 File Structure
-
-```
-student-risk-dashboard/
-├── index.html          # Main dashboard (self-contained)
-└── README.md           # This file
-```
-
-## Technical Details
-
-- **Pure HTML/CSS/JavaScript** — No build process required
-- **Chart.js 4.4.0** — For visualizations
-- **Self-contained** — All data embedded in the HTML file
-- **Responsive** — Works on desktop and tablet
-
-## Key Findings
+## Key Findings (Sample Dataset, n=1,000)
 
 | Metric | Value |
 |--------|-------|
-| Total Students | 1,000 |
-| Dropout Rate | 7.1% (71 students) |
-| Critical Risk Dropout Rate | 55.9% |
-| On Track Dropout Rate | 4.6% |
-| 2021 Cohort Graduation Rate | 83.6% |
+| Total Records | 1,000 |
+| Attrition Rate | 7.1% |
+| Critical Risk Attrition Rate | 55.9% |
+| On Track Attrition Rate | 4.6% |
+| Cohort Retention Rate | 83.6% |
 
-**Key Insight:** Students at Risk Level 3 drop out at **12x the rate** of Risk Level 0 students.
+**Key Insight:** Records at Risk Level 3 attrite at 12x the rate of 
+Risk Level 0 records.
+
+## Quick Start
+
+1. Download `index.html`
+2. Open in any modern browser — no build process required
+3. Use filters to explore the data
+4. Toggle between Table View and Charts View
+
+## File Structure
+```
+risk-scoring-dashboard/
+├── index.html    # Self-contained dashboard
+└── README.md     # This file
+```
+
+## Technical Stack
+
+- Pure HTML / CSS / JavaScript — no dependencies or build tools
+- Chart.js 4.4.0 for visualizations
+- All data embedded in the HTML file
+- LLM-assisted development (ChatGPT, Claude) for scoring logic 
+  and dashboard architecture
+- Responsive layout for desktop and tablet
+
+## Live Demo
+
+[View Dashboard](https://ashsconomist.github.io/student-risk-dashboard/)
 
 ## License
 
-This project is for educational purposes. Student data is synthetic/anonymized.
-
-## Acknowledgments
-
-Built for Public Schools to support student success through data-driven intervention.
-
----
-
-**Live Demo:** [View Dashboard](https://ashsconomist.github.io/student-risk-dashboard/)
-
-
+Synthetic/anonymized data. For portfolio and demonstration purposes.
